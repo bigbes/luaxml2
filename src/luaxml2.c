@@ -3,8 +3,8 @@
 #include <stdarg.h>
 #include <string.h>
 
-#include <lua.h>
-#include <lauxlib.h>
+#include <tarantool/lua.h>
+#include <tarantool/lauxlib.h>
 
 #include <libxml/parser.h>
 #include <libxml/xmlschemas.h>
@@ -247,7 +247,7 @@ static int l_validate_xsd_string(lua_State *L){
 	return validate_xsd(doc, schema_doc, L);
 }
 
-static const struct luaL_reg luaxml2[] = {
+static const struct luaL_Reg luaxml2[] = {
     {"validateXSD", l_validate_xsd_file},
     {"validateXSDString", l_validate_xsd_string},
     {"validateRelaxNG", l_validate_relax_ng},
